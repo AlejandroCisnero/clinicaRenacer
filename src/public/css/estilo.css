@@ -1,0 +1,82 @@
+@font-face {
+font-family: 'SF_Cartoonist_Hand';
+  src: url('../recursos/fonts/SFCartoonistHand.woff');
+  font-weight: normal;
+  font-style: normal;
+}
+.big-banner{
+  background-image: url('../recursos/backgroundDark.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+}
+.big-bannerCita{
+  background-image: url('../recursos/cita.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+}
+.big-bannerPaciente{
+  background-image: url('../recursos/pacientesBackground.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+}
+.big-bannerDoctor{
+  background-image: url('../recursos/doctors.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+}
+.big-bannerHome{
+  background-image: url('../recursos/home.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 100%;
+  position: absolute;
+}
+#logFormDiv{
+  border-radius: 15px;
+  background-color: rgba(87,88,91,0.8);
+}
+.logo{
+  font-size: 2em;
+}
+img{
+  height: 70px;
+  width: 70px;
+}
+a{
+  font-family: 'SF_Cartoonist_Hand';
+  font-weight: bold;
+}
+li{
+  font-family: 'SF_Cartoonist_Hand';
+  vertical-align: middle;
+  align-items: center;
+  font-size: 2em;
+}
+h1{
+  font-size: 4em;
+  font-family: 'SF_Cartoonist_Hand';
+}
+p{
+  font-size: 2em;
+  font-family: 'SF_Cartoonist_Hand';
+}
+.timeAndDate{
+  margin: auto;
+  text-align: center;
+  margin-top: 5%;
+  font-size: 3em;
+}
+#time{
+  font-size: 4em;
+}
+.table{
+  border-radius: 10px;
+}

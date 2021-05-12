@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="/views/logo.ico"/>
+  <link rel="icon" href="/../recursos/favicon.ico">
+  <meta charset="utf-8"/>
+  <%- include ('partials/home/head.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+  <link rel="stylesheet" href="/css/estilo.css"/>
+  <title><%= title %></title>
+</head>
+<body>
+  <div class="jumbotron big-banner m-0 w-100 p-0 text-white">
+    <nav class="navbar navbar-expand-lg mt-5 text-white">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#barraDesplegable" aria-controls="barraDesplegable" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse align-self-center" id="barraDesplegable">
+      <ul class="navbar-nav col-12">
+        <li class="nav-item align-self-center">
+          <a class="nav-link text-white logo" href="/home" tabindex="-2"><img class="mr-1" src="/recursos/Logo.png"></img> Clinica Renacer </a>
+        </li>
+        <div class="col-5">
+
+        </div>
+        <li class="nav-item align-self-center mr-5">
+          <a class="nav-link text-white" href="https://www.facebook.com/" tabindex="-1"><i class="fab fa-facebook mr-1"></i></a>
+        </li>
+        <li class="nav-item align-self-center ml-5">
+          <a class="nav-link text-white" href="https://twitter.com/home" tabindex="-1"><i class="fab fa-twitter mr-1"></i></a>
+        </li>
+      </ul>
+    </div>
+    </nav>
+  <div class="container d-flex mt-5 col-12">
+    <div class="row col-12">
+      <div class="col-8 pt-5">
+        <h1>Ciudado dental de alta calida garantizado por nuestros clientes</h1>
+        <p>Nuestro equipo entero se dedica a proporcionar el mas alto nivel de servicios de atencion
+          dental de calidad que se adaptan a las necesidades especificas de cada miembro de su familia
+        </p>
+      </div>
+      <div class="col-3 p-2 pt-4 pb-4 ml-5 mt-5" id="logFormDiv">
+        <form class="col-12" id="logForm" method="post" action="/userValidate">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Iniciar Sesion</label>
+          <div class="row">
+
+          </div>
+          <label for="exampleInputEmail1">Ususario</label>
+          <input type="text" class="form-control col-12" id="userLog" aria-describedby="userLogHelp" placeholder="Usuario" name="user">
+          <small id="emailHelp" class="form-text col-1 pl-0" data-toggle="tooltip" data-placement="top" title="El usuario que usted introduzca delimitará su control sobre los datos"><i class="fas fa-question-circle"></i></small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control col-12" id="userPasswrod" placeholder="Contraseña" name="password">
+        </div>
+        <% if(estado=='Success'){%>
+            <%}else if(estado=='neutral'){%>
+            <%}else if(estado=='Failed'){%>
+              <small id="wrongCredentials" class="form-text mb-3 text-warning">Contraseña o usuario no validos</small>
+            <%}%>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </form>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+</body>
+<script type="text/javascript">
+$(function () {
+$('[data-toggle="tooltip"]').tooltip()
+})
+</script>
+</html>

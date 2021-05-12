@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/../recursos/public/favicon.ico">
+  <meta charset="utf-8"/>
+  <%- include ('partials/home/head.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+  <link rel="stylesheet" href="/css/estilo.css"/>
+  <title><%= title %></title>
+</head>
+<body>
+  <div class="jumbotron big-bannerHome m-0 w-100 p-0 text-white">
+  <%- include ('partials/home/logoNav.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+  <%- include ('partials/home/navigationBar.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+  <div class="timeAndDate">
+    <div id="time">
+
+    </div>
+    <div id="date">
+  
+    </div>
+  </div>
+  
+</div>
+</div>
+</body>
+<script type="text/javascript">
+var myDate=document.querySelector('#date');
+var myTime=document.querySelector('#time');
+
+  setInterval(timeUpdate,1000);
+
+function timeUpdate(){  
+  var today = new Date();
+  myDate.textContent=today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
+  if (today.getMinutes() < 10) {
+    myTime.textContent=today.getHours() + ":" + "0" + today.getMinutes();
+  }else{
+    myTime.textContent=today.getHours() + ":" + today.getMinutes();
+
+  }
+}
+</script>
+</html>

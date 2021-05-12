@@ -1,0 +1,84 @@
+<% if(estado=='Success'){%>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Paciente añadido satisfactoriamente</h4>
+  </div>
+  <%}else if(estado=='neutral'){%>
+<%}else if(estado=='Failed'){%>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Este paciente ya existe</h4>
+  </div>
+  <%}%>
+
+<div class="card-body">
+  <form class="needs-validation" autocomplete="nope" method="post" name="pacienteAdd" action="/newPacientModified/<%=userInfo.idP%>">
+    <label for="" class="text-white">Informacion General</label>
+    <div class="form-row border border-white rounded p-3 col-12 border-white">
+      <div class="col-md-6" id="userName">
+        <label for="nombrePac" class="text-white">Nombre</label>
+        <input type="text" name="userName" class="form-control col-12" id="nombrePac" placeholder="<%=userInfo.nombre%>" autocomplete="nope" required>
+      </div>
+      <div class="col-md-6" id="userName">
+        <label for="exampleInputEmail1" class="text-white">Apellido</label>
+        <input type="text" name="userLastName" class="form-control col-12" id="apellidoPac" placeholder="<%=userInfo.apellido%>" autocomplete="nope" required>
+      </div>
+      <div class="col-md-6 mt-3" id="userName">
+        <label for="exampleInputEmail1" class="text-white">Identificacion</label>
+        <input type="text" name="userIde" class="form-control col-12" id="identificacion" placeholder="<%=userInfo.identificacion%>" autocomplete="off" required>
+      </div>
+      <div class="container mt-3 col-md-6 h-25">
+        <label for="" class="text-white" >Sexo</label>
+        <div class="form-control bg-transparent pl-5 pr-5 border border-white rounded pt-1 pb-1 border-white">
+          <input class="form-check-input ml-4" type="radio" value="1" name="userGender" id="sexoM" <%if(userInfo.sexo==1){%><%="checked"%><%}%> required>
+          <label class="form-check-label ml-5 text-white" for="sexoM">
+            Masculino
+          </label>
+          <div class="form-check offset-md float-right">
+            <input class="form-check-input mr-4" type="radio" value="0"  name="userGender" id="sexoF" <%if(userInfo.sexo==0){%><%="checked"%><%}%> required>
+            <label class="form-check-label mr-5 text-white" for="sexoF">
+              Femenino
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 mt-3" id="userName">
+        <label for="exampleInputEmail1" class="text-white">Nacimiento</label>
+        <input type="date" name="userBirth" class="form-control col-12" id="fechaNac" placeholder="Fecha de nacimiento" autocomplete="nope" required>
+      </div>
+      <div class="container mt-3 col-md-6 h-25">
+        <label for="" class="text-white">Estado Civil</label>
+        <div class="form-control bg-transparent pl-5 pr-5 border border-secondary rounded pt-1 pb-1 border-white">
+          <input class="form-check-input ml-4" type="radio" value="Casado" name="civil" id="estadoC" <%if(userInfo.estadoCivil=='Casado'){%><%="checked"%><%}%> required>
+          <label class="form-check-label ml-5 text-white" for="estadoC">
+            Casado
+          </label>
+          <div class="form-check offset-md float-right">
+            <input class="form-check-input mr-4" type="radio" value="Soltero" name="civil" id="estadoS" <%if(userInfo.estadoCivil=='Soltero'){%><%="checked"%><%}%> required>
+            <label class="form-check-label mr-5 text-white" for="estadoS">
+              Soltero
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <label for="" class="mt-4 text-white">Informacion de Contacto</label>
+    <div class="form-row border border-secondary rounded p-3 col-12 border-white">
+      <div class="col-md-6" id="userName">
+        <label for="telefono" class="text-white">Telefono</label>
+        <input type="tel" name="userTel" class="form-control col-12" id="telefono" placeholder="<%=userInfo.telefono%>" autocomplete="nope">
+      </div>
+      <div class="col-md-6" id="userName">
+        <label for="barrio" class="text-white">Barrio</label>
+        <input type="text" name="userBarrio" class="form-control col-12" id="barrio" placeholder="<%=userInfo.barrio%>" autocomplete="nope" required>
+      </div>
+      <div class="col-md-6 mt-3" id="userName">
+        <label for="ciudad" class="text-white">Ciudad</label>
+        <input type="text" name="userCiudad" class="form-control col-12" id="ciudad" placeholder="<%=userInfo.ciudad%>" autocomplete="nope" required>
+      </div>
+      <div class="col-md-6 mt-3" id="userName">
+        <label for="domicilio" class="text-white">Domicilio</label>
+        <input type="text" name="userDomicilio" class="form-control col-12" id="domicilio" placeholder="<%=userInfo.domicilio%>" autocomplete="nope" required>
+      </div>
+    </div>
+     <button type="submit" class="btn btn-secondary mt-3 ml-0">Enviar</button>
+  </form>
+</div>

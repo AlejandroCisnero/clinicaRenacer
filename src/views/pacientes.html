@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <%- include ('partials/home/head.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+    <link rel="stylesheet" href="/css/estilo.css"/>
+    <title><%= title%></title>
+  </head>
+  <body>
+    <div class="jumbotron big-bannerPaciente m-0 w-100 p-0 text-white">
+    <%- include ('partials/home/logoNav.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+    <%- include ('partials/home/navigationBar.html') %><!--Uso del motor de plantilla ejs para sustituir el codigo de ese archivo en esta linea-->
+    <%- include ('partials/paciente/pacienteNavs.html') %>
+
+    <% if(ruta=="/pacientes/add") { %>
+      <%- include ('partials/paciente/pacienteAdd.html') %>
+        <% }else if(ruta=="/pacientes/delete" || ruta=="/deletePacient"){ %>
+          <%- include ('partials/paciente/pacienteDelete.html') %>
+            <% }else if(ruta=="/modifyPacient"){ %>
+              <%- include ('partials/paciente/pacienteModify.html') %>
+              <% }else if(ruta=="userModify"){ %>
+                <%- include ('partials/paciente/pacienteModifyCard.html') %>
+                <% }else if(ruta=="/pacienteShowDown"){ %>
+                  <%- include ('partials/paciente/pacienteShowDown.html') %>
+                  <% }else if(ruta=="/pacientes"){ %>
+                    <%}%>
+                  </div>
+  </body>
+</html>

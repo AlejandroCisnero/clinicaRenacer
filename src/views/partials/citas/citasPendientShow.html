@@ -1,0 +1,45 @@
+<% if(estado=='Success'){%>
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading"></h4>
+  </div>
+  <%}else if(estado=='neutral'){%>
+<%}else if(estado=='Failed'){%>
+  <div class="alert alert-danger" role="alert">
+    <h4 class="alert-heading">Acceso denegado</h4>
+  </div>
+  <%}%>
+
+<%if(sujeto2!=null){%>
+<div class="row col-12 d-flex justify-content-center text-white">
+  <div class="col-12 mt-4 text-center">
+    <table class="table table-hover text-white table-dark">
+      <th>Nombres</th>
+      <th>Apellidos</th>
+      <th>Identificacion</th>
+      <th>Doctor</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Conceptro</th>
+      <th>Estado</th>
+      <%for(var i=0;i<sujeto2.recordset.length; i++){%>
+        <tr>
+          <td><%= sujeto2.recordset[i].nombrePac%></td>
+          <td><%= sujeto2.recordset[i].apellidoPac%></td>
+          <td><%= sujeto2.recordset[i].identificacion%></td>
+          <td><%= sujeto2.recordset[i].nombreDoc%></td>
+          <td><%= moment(sujeto2.recordset[i].fecha).format('YYYY-MM-DD');%></td>
+          <td><%= moment(sujeto2.recordset[i].hora).format('hh:mm');%></td>
+          <td><%= sujeto2.recordset[i].concepto%></td>
+          <%if(sujeto2.recordset[i].estado==1){%>
+          <td>Pendiente</td>
+          <%}else if(sujeto2.recordset[i].estado==0){%>
+            <td>Pasada</td>
+            <%}%>
+        </tr>
+        <%}%>
+    </table>
+  </div>
+  <footer>Todas las citas mostradas estan pendiente</footer>
+
+</div>
+<%}else{}%>
